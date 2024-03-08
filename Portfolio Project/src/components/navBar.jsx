@@ -4,7 +4,6 @@ import {
   MobileNav,
   Typography,
   IconButton,
-  Avatar,
 } from "@material-tailwind/react";
  
 export default function NavBar() {
