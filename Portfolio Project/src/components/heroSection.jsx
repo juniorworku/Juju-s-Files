@@ -1,5 +1,6 @@
 import Typewriter from "typewriter-effect";
 import { Bio } from '../data/fixedData';
+import heroImage from "../images/heroImage.jpg"
 import {
   Button,
   Typography,
@@ -10,7 +11,12 @@ export default function HeroSection() {
   return (
     <>
       <header className="bg-white p-8">
-        <div className="grid mt-16 min-h-[82vh] w-full lg:h-[54rem] md:h-[34rem] place-items-stretch bg-center bg-contain bg-no-repeat">
+        <div className="grid mt-2 min-h-[80vh] w-full lg:h-[54rem] md:h-[34rem] place-items-stretch bg-center bg-contain bg-no-repeat">
+        <img
+          className="m-auto h-60 w-60 rounded-full object-cover object-center shadow-xl shadow-blue-gray-900/50 border"
+          src={heroImage}
+          alt="nature image"
+        />
           <div className="container mx-auto px-4 text-center">
             <Typography
               variant="h1"
@@ -35,7 +41,8 @@ export default function HeroSection() {
             </Typography>
             <Typography
               variant="lead"
-              className="mx-auto w-full !text-gray-500 lg:text-lg text-base"
+              color="blue-gray"
+              className="mx-auto w-full lg:text-lg text-base"
             >
               {Bio.description}
             </Typography>

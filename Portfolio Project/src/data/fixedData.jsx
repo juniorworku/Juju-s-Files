@@ -27,6 +27,7 @@ export const Bio = {
   resume:
     "https://drive.google.com/file/d/1fp_VDnXsfmdrWBn223QempNEUJHa_r83/view?usp=drive_link",
   github: "https://github.com/juniorworku",
+  profile:"https://drive.google.com/file/d/1VrhX0iXlSDF3I-p7VbLCGb1658YM8XEs/view?usp=drive_link"
 };
 
 export const socialLinks = {
