@@ -1,41 +1,60 @@
-import React from 'react'
+import {
+    Card,
+    CardBody,
+    Typography,
+    Button,
+    CardHeader,
+  } from "@material-tailwind/react";
 
-export default function Skills() {
-  return (
+import { skills } from "../data/fixedData";
+import { breakpoint } from "../utils/theme";
+  
+  export default function Skills() {
+    return (
+      <>
+      <div className="flex flex-col text-white font-montserrat p-0 md:p-4 mb-8">
+        <div className="flex flex-col flex-wrap items-center justify-center text-center gap-4">
+            <Typography variant="h3" mb={4} className="text-center">
+            Skills
+            </Typography>
+            <Typography variant="h6" mb={4} className="text-center">
+            Check out some of the skills i've been working on:
+            </Typography>
+            <div className="flex flex-wrap items-center justify-center gap-12 md:w-full">
+            {skills.map((skillCategory) => (
+                <Card
+                variant="gradient"
+                color="blue-gray"
+                key={skillCategory.title}
+                className="w-full flex flex-col gap-8 border-2 border-teal-500 rounded-md min-h-18em p-4 shadow-md transition-transform hover:transform hover:scale-103 hover:shadow-lg"
+                >
+                <CardHeader variant="gradient" color="blue-gray" className="relative m-0 text-4xl font-bold md:text-5xl">
+                    <Typography variant="h4" className="text-center">
+                    {skillCategory.title}
+                    </Typography>
+                </CardHeader>
+                <CardBody className="flex flex-wrap items-center justify-center gap-5 self-center mb-4">
+                    {skillCategory.skills.map((skill) => (
+                    <Button
+                        key={skill.name}
+                        className="flex flex-wrap items-center justify-center gap-2 p-2 border border-teal-500 rounded-full text-lg text-gray-500 cursor-pointer hover:transform hover:scale-103 hover:shadow-md transition-transform hover:-translate-y-2 ease-in-out"
+                    >
+                        <img
+                        className="w-5 h-5"
+                        src={skill.image}
+                        alt={skill.name}
+                        />
+                        {skill.name}
+                    </Button>
+                    ))}
+                </CardBody>
+                </Card>
+            ))}
+            </div>
 
-    <div className="flex-col min-h-screen h-full w-full bg-white p-1">
-        <div className="flex p-2 w-full justify-center space-x-3">
-            <button className="min-w-auto w-32 h-10 shadow-md border-solid border-2 border-sky-500 bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white  p-2 rounded-full font-semibold transition-transform hover:-translate-y-2 ease-in-out">
-                Just
-            </button>
-            <button className="min-w-auto w-32 h-10 shadow-md border-solid border-2 border-sky-500 bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white  p-2 rounded-full font-semibold transition-transform hover:-translate-y-2 ease-in-out">
-                Just
-            </button>
-            <button className="min-w-auto w-32 h-10 shadow-md border-solid border-2 border-sky-500 bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white  p-2 rounded-full font-semibold transition-transform hover:-translate-y-2 ease-in-out">
-                Just
-            </button>
-            <button className="min-w-auto w-32 h-10 shadow-md border-solid border-2 border-sky-500 bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white  p-2 rounded-full font-semibold transition-transform hover:-translate-y-2 ease-in-out">
-                Just
-            </button>
-           
         </div>
-        <div className="flex p-2 w-full justify-center space-x-3">
-            <button className="min-w-auto w-32 h-10 shadow-md border-solid border-2 border-sky-500 bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white  p-2 rounded-full font-semibold transition-transform hover:-translate-y-2 ease-in-out">
-                Just
-            </button>
-            <button className="min-w-auto w-32 h-10 shadow-md border-solid border-2 border-sky-500 bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white  p-2 rounded-full font-semibold transition-transform hover:-translate-y-2 ease-in-out">
-                Just
-            </button>
-            <button className="min-w-auto w-32 h-10 shadow-md border-solid border-2 border-sky-500 bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white  p-2 rounded-full font-semibold transition-transform hover:-translate-y-2 ease-in-out">
-                Just
-            </button>
-            <button className="min-w-auto w-32 h-10 shadow-md border-solid border-2 border-sky-500 bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white  p-2 rounded-full font-semibold transition-transform hover:-translate-y-2 ease-in-out">
-                Just
-            </button>
-
-           
-        </div>
-    </div>
-    
-  )
-}
+      </div>
+      </>
+    );
+  }
+  
