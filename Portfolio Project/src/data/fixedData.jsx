@@ -23,7 +23,7 @@ export const Bio = {
     "Programmer",
   ],
   description:
-    "a versatile web developer who loves to create beautiful and functional websites for people who want to experience the full emersion of creativity.",
+    "a versatile creator passionate about crafting digital solutions that are as functional as they are visually engaging. I thrive on the journey of translating innovative ideas into seamless, user-centered experiences.",
   resume:
     "https://drive.google.com/file/d/1fp_VDnXsfmdrWBn223QempNEUJHa_r83/view?usp=drive_link",
   github: "https://github.com/juniorworku",
