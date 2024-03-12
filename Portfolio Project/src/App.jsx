@@ -8,7 +8,7 @@ function App() {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <div className="bg-indigo-400 w-full overflow-x-hidden flex flex-col justify-center items-center gap-12 relative">
+      <div className="bg-teal-100 w-full overflow-x-hidden flex flex-col justify-center items-center gap-12 relative">
         <NavBar/>
         <HeroSection />
         <Skills />

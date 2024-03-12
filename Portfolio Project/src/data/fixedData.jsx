@@ -113,3 +113,16 @@ export const skills = [
     ],
   },
 ];
+
+export const projects = [
+  {
+    id: 0,
+    image: ,
+    title: "portfolio website",
+    description:
+      " Welcome to the GitHub repository for the Dagoo.inc portfolio website project! Explore the source code for this digital marketing showcase, highlighting services, projects, and expertise. Built with Vite, React, and Tailwind CSS, this project demonstrates modern web development and design practices for impactful digital experiences.",
+    tags: ["React", "Tailwind Css"],
+    link: "",
+    repository: "",
+  },
+]
