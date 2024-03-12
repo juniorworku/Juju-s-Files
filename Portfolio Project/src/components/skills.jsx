@@ -7,7 +7,6 @@ import {
   } from "@material-tailwind/react";
 
 import { skills } from "../data/fixedData";
-import { breakpoint } from "../utils/theme";
   
   export default function Skills() {
     return (

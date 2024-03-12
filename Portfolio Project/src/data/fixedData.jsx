@@ -13,6 +13,12 @@ import github from "../images/github.png";
 import git from "../images/git.png";
 import ps from "../images/ps.png";
 import figma from "../images/figma.png";
+import PortfolioWebsite from "../images/PortfolioWebsite.jpg";
+import inventoryImage from "../images/inventoryImage.png";
+import budgetExpenseImage from "../images/budgetExpenseImage.png";
+import weatherImage from "../images/weatherImage.png";
+
+
 
 export const Bio = {
   name: "Junior Worku",
@@ -117,12 +123,42 @@ export const skills = [
 export const projects = [
   {
     id: 0,
-    image: ,
+    image: PortfolioWebsite,
     title: "portfolio website",
     description:
-      " Welcome to the GitHub repository for the Dagoo.inc portfolio website project! Explore the source code for this digital marketing showcase, highlighting services, projects, and expertise. Built with Vite, React, and Tailwind CSS, this project demonstrates modern web development and design practices for impactful digital experiences.",
-    tags: ["React", "Tailwind Css"],
-    link: "",
-    repository: "",
+      " Welcome to the GitHub repository for the my personal portfolio website project! Explore the source code. Built with HTML, CSS, and JavaScript.",
+    tags: ["HTML", "CSS", "JS"],
+    link: "https://github.com",
+    repository: "https://github.com/juniorworku/web-projects/tree/main/Junior's%20website%20portfolio/Portfolio%20Project",
+  },
+  {
+    id: 1,
+    image: inventoryImage,
+    title: "Inventory Management System",
+    description:
+      " Welcome to the GitHub repository for the my personal portfolio website project! Explore the source code. Built with HTML, CSS, and JavaScript.",
+    tags: ["React", "BootStrap","RESTFul API"],
+    link: "https://github.com",
+    repository: "https://github.com/juniorworku",
+  },
+  {
+    id: 2,
+    image: budgetExpenseImage,
+    title: "Budget Expense App",
+    description:
+      " Welcome to the GitHub repository for the my personal portfolio website project! Explore the source code. Built with HTML, CSS, and JavaScript.",
+    tags: ["React + Vite", "BootStrap","RESTFul API"],
+    link: "https://github.com",
+    repository: "https://github.com/juniorworku",
+  },
+  {
+    id: 3,
+    image: weatherImage,
+    title: "weather App",
+    description:
+      " Welcome to the GitHub repository for the my personal portfolio website project! Explore the source code. Built with HTML, CSS, and JavaScript.",
+    tags: ["React + vite", "Material TailWind Css"],
+    link: "https://github.com",
+    repository: "https://github.com/juniorworku",
   },
 ]

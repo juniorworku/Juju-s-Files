@@ -4,6 +4,7 @@ import HeroSection from './components/heroSection'
 import NavBar from './components/navBar'
 import Skills from './components/skills'
 import { ThemeProvider } from '@material-tailwind/react';
+import Projects from './components/projects';
 function App() {
 
   return (
@@ -12,6 +13,7 @@ function App() {
         <NavBar/>
         <HeroSection />
         <Skills />
+        <Projects />
       </div>
     </ThemeProvider>
   )
