@@ -10,7 +10,7 @@ import {
 export default function HeroSection() {
   return (
     <>
-      <header className="bg-teal-100  p-4">
+      <header className="bg-light-green-200 p-4">
         <div className="grid mt-2 min-h-[80vh] w-full lg:h-[54rem] md:h-[34rem] place-items-stretch bg-center bg-contain bg-no-repeat">
           <div className="container mx-auto px-4 text-start">
             <img
