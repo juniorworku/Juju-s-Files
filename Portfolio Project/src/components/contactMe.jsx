@@ -1,16 +1,15 @@
-import { Button, Input, Textarea, Typography } from "@material-tailwind/react";
-import { Formik,ErrorMessage } from "formik";
-import * as Yup from "yup";
 import { useState } from "react";
+import { Formik, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import { Button, Input, Textarea, Typography } from "@material-tailwind/react";
 import check from "../images/check-mark.png";
 
-export function ContactMeSection() {
-
+function ContactMeSection() {
   const initialValues = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    message: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
   };
 
   const [submissionStatus, setSubmissionStatus] = useState(null);
@@ -18,189 +17,155 @@ export function ContactMeSection() {
   const validationSchema = Yup.object().shape({
     firstName: Yup.string().required("First Name is Required"),
     lastName: Yup.string().required("Last Name is Required"),
-    email: Yup.string().required("Email is Required"),
+    email: Yup.string().email("Invalid email").required("Email is Required"),
     message: Yup.string().required("Message is Required"),
   });
 
-    const handleSubmit = async (values, { resetForm }) => {
-      try {
-        const response = await fetch("/api/contact", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(values),
-        });
-  
-        if (response.ok) {
-          setSubmissionStatus("success");
-          resetForm();
-          // Clear the success message after 5 second
-          setTimeout(() => {
-            setSubmissionStatus(null);
-          }, 5000);
-        } else {
-          setSubmissionStatus("error");
-          setTimeout(() => {
-            setSubmissionStatus(null);
-          }, 5000);
-        }
-      } catch (error) {
-        console.error(error);
+  const handleSubmit = async (values, { resetForm }) => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (response.ok) {
+        setSubmissionStatus("success");
+        resetForm();
+        setTimeout(() => {
+          setSubmissionStatus(null);
+        }, 5000);
+      } else {
         setSubmissionStatus("error");
+        setTimeout(() => {
+          setSubmissionStatus(null);
+        }, 5000);
       }
-    };
+    } catch (error) {
+      console.error(error);
+      setSubmissionStatus("error");
+    }
+  };
 
   return (
-    <section className="px-8 py-8 lg:py-16">
-      <div className="container mx-auto text-center">
-        <Typography
-          variant="h3"
-          color="blue-gray"
-          className="mb-4"
-        >
-          Contact me
-        </Typography>
-        <Typography className="mb-10 font-normal !text-lg lg:mb-20 mx-auto max-w-3xl !text-gray-500">
-            Please don't hesitate to get in touch with me for any inquiries or potential collaborations
-        </Typography>
-        <div className="grid grid-cols-1 gap-x-12 gap-y-6 lg:grid-cols-2 items-start">
-          <div className="flex flex-col gap-4 lg:max-w-sm">
-            <Formik
-              initialValues={initialValues}
-              validationSchema={validationSchema}
-              onSubmit={handleSubmit}
-              action="#"
-            >
-
+    <div id="about" className="container mx-auto px-4 text-center">
+      <Typography variant="h3" color="blue-gray" className="mb-4">
+        Contact me
+      </Typography>
+      <Typography className="mb-10 font-normal text-lg mx-auto max-w-3xl">
+        Please don't hesitate to get in touch with me for any inquiries or
+        potential collaborations
+      </Typography>
+      <div className="grid grid-cols-1 gap-6">
+        <div className=" w-300 flex flex-col gap-4 m-auto">
+          <Formik
+            initialValues={initialValues}
+            validationSchema={validationSchema}
+            onSubmit={handleSubmit}
+          >
+            <form>
               <Typography
                 variant="h4"
-                className="text-left !font-semibold !text-gray-600"
+                className="text-left font-semibold mb-4"
               >
                 Get in touch
               </Typography>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 text-black">
                 <div>
                   <Typography
                     variant="small"
-                    className="mb-2 text-left font-medium !text-gray-900"
+                    className="mb-2 text-left font-medium"
                   >
                     First Name
                   </Typography>
-                  <Input
-                    color="gray"
-                    size="lg"
-                    placeholder="First Name"
+                  <Field
+                    type="text"
+                    id="firstName"
                     name="firstName"
+                    placeholder="First Name"
+                    as={Input}
                     className="focus:border-t-gray-900"
-                    containerProps={{
-                      className: "min-w-full",
-                    }}
-                    labelProps={{
-                      className: "hidden",
-                    }}
                   />
-                  <div className="text-red-500 mb-8 font-normal">
-                    <ErrorMessage name="FirstName" className="error" />
-                  </div>
+                  <ErrorMessage name="firstName" className="text-red-500 font-normal" />
                 </div>
                 <div>
                   <Typography
                     variant="small"
-                    className="mb-2 text-left font-medium !text-gray-900"
+                    className="mb-2 text-left font-medium"
                   >
                     Last Name
                   </Typography>
-                  <Input
-                    color="gray"
-                    size="lg"
-                    placeholder="Last Name"
+                  <Field
+                    type="text"
+                    id="lastName"
                     name="lastName"
+                    placeholder="Last Name"
+                    as={Input}
                     className="focus:border-t-gray-900"
-                    containerProps={{
-                      className: "!min-w-full",
-                    }}
-                    labelProps={{
-                      className: "hidden",
-                    }}
                   />
-                  <div className="text-red-500 mb-8 font-normal">
-                    <ErrorMessage name="LastName" className="error" />
-                  </div>
+                  <ErrorMessage name="lastName" className="text-red-500 font-normal" />
                 </div>
               </div>
               <div>
                 <Typography
                   variant="small"
-                  className="mb-2 text-left font-medium !text-gray-900"
+                  className="mb-2 text-left font-medium"
                 >
                   Your Email
                 </Typography>
-                <Input
-                  color="gray"
-                  size="lg"
-                  placeholder="name@email.com"
+                <Field
+                  type="email"
+                  id="email"
                   name="email"
+                  placeholder="name@example.com"
+                  as={Input}
                   className="focus:border-t-gray-900"
-                  containerProps={{
-                    className: "!min-w-full",
-                  }}
-                  labelProps={{
-                    className: "hidden",
-                  }}
                 />
-                <div className="text-red-500 mb-8 font-normal">
-                  <ErrorMessage name="email" className="error" />
-                </div>
+                <ErrorMessage name="email" className="text-red-500 font-normal" />
               </div>
               <div>
                 <Typography
                   variant="small"
-                  className="mb-2 text-left font-medium !text-gray-900"
+                  className="mb-2 text-left font-medium"
                 >
                   Your Message
                 </Typography>
-                <Textarea
+                <Field
+                  as={Textarea}
                   rows={6}
-                  color="gray"
-                  placeholder="Message"
+                  id="message"
                   name="message"
-                  className="focus:border-t-gray-900"
-                  containerProps={{
-                    className: "!min-w-full",
-                  }}
-                  labelProps={{
-                    className: "hidden",
-                  }}
+                  placeholder="Message"
+                  className="focus:border-blacked"
                 />
+                <ErrorMessage name="message" className="text-red-500 font-normal" />
               </div>
-              <Button type="submit" className="w-full" color="gray">
-                Send message
-              </Button>
-            </Formik>
-
-          </div>
-          
-          <div>
-            {submissionStatus === "success" && (
-              <div className="success-message">
-                <div className="success-body">
-                  <img src={check} alt="success icon" className="success-icon" />
-                    Email sent successfully! I will get back to you as soon as
-                    possible
-                </div>
-                <div className="success-progress"></div>
+                <Button type="submit" variant="outlined-green" color="green">
+                  Send message
+                </Button>
+            </form>
+          </Formik>
+        </div>
+        <div>
+          {submissionStatus === "success" && (
+            <div className="success-message">
+              <div className="success-body">
+                <img src={check} alt="success icon" className="success-icon" />
+                Email sent successfully! I will get back to you as soon as possible
               </div>
-            )}
-            {submissionStatus === "error" &&(
-              <div className="error-message">
-                Error sending email. Please try again later.
-              </div>
-            )}
-          </div>
+              <div className="success-progress"></div>
+            </div>
+          )}
+          {submissionStatus === "error" && (
+            <div className="error-message">
+              Error sending email. Please try again later.
+            </div>
+          )}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

@@ -9,7 +9,7 @@ import { projects } from "../data/fixedData";
 
 export default function Projects() {
   return (
-    <div id='projects'>
+    <div id='project'>
         <Typography variant="h3" className="m-0 relative text-4xl font-bold md:text-5xl text-center">PROJECTS</Typography>
         <Typography className="text-center font-medium m-0 font-montserrat items-stretch py-3" variant="h6">
             Below, you'll find an overview of the various projects i've had the

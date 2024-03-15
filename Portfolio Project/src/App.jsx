@@ -16,7 +16,7 @@ function App() {
         <HeroSection />
         <Skills />
         <Projects />
-
+        <ContactMeSection />
         <FooterSection />
         
       </div>
