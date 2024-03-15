@@ -9,16 +9,17 @@ import { projects } from "../data/fixedData";
 
 export default function Projects() {
   return (
-    <>
-        <Typography variant="h3" className="m-0 text-gray-700 relative text-4xl font-bold md:text-5xl">PROJECTS</Typography>
-        <Typography className="text-lg text-gray-100 font-medium text-center mb-4 font-montserrat md:w-80" variant="h6">Below, you'll find an overview of the various projects i've had the
+    <div id='projects'>
+        <Typography variant="h3" className="m-0 relative text-4xl font-bold md:text-5xl text-center">PROJECTS</Typography>
+        <Typography className="text-center font-medium m-0 font-montserrat items-stretch py-3" variant="h6">
+            Below, you'll find an overview of the various projects i've had the
             privilege to work on thus far:
         </Typography>
         <div className="flex items-center justify-center">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
             {projects.map((item) =>(
               <div key={item.id + 32}>
-                <Card color="light-green-" className="bg-light-green-300 relative py-1 px-2 rounded-3xl w-97 my-4 shadow-xl">
+                <Card color="light-green" className="bg-light-green-300  relative py-1 px-2 rounded-3xl w-97 my-4 shadow-xl min-h-18em p-4 transition-transform duration-1000 ease-in-out hover:transform hover:scale-103 hover:shadow-lg">
                     <CardHeader shadow={false} floated={false} className="cursor-pointer max-w-19em p-0.5 flex flex-col justify-between gap-4 rounded-md shadow-md transition-all duration-500 ease-in-out hover:shadow-none">
                       <img 
                         src={item.image}
@@ -26,16 +27,16 @@ export default function Projects() {
                         className="w-full rounded-md transition-all duration-1500 ease-in-out md:hover:transform md:hover:scale-180" 
                       />
                     </CardHeader>
-                    <CardBody>
-                      <Typography variant="h6" color="gray" className="mb-4 uppercase">
+                    <CardBody className="text-black">
+                      <Typography variant="h5" className="text-center mb-4 uppercase underline ">
                         {item.title}
                       </Typography>
-                      <div className="flex flex-row gap-3">
+                      <div className="flex flex-row flex-wrap gap-3">
                         {item.tags.map((tag) => (
-                          <Typography variant="h6" color="blue-gray" className="mb-2">{tag}</Typography>
+                          <Button variant="outlined-green" className="mb-2 bg-light-green-400 items-center justify-center gap-2 p-2 border border-teal-500 rounded-full text-md cursor-pointer hover:transform hover:scale-103 hover:shadow-md transition-transform hover:-translate-y-2 ease-in-out">{tag}</Button>
                         ))}
                       </div>
-                      <Typography color="gray" className="mb-8 font-normal">
+                      <Typography className="mb-8 font-normal">
                         {item.description}
                       </Typography>
                       {item.link && (
@@ -98,8 +99,8 @@ export default function Projects() {
           </div>
 
         </div>
-        
-    </>
+
+    </div>
     
   )
 }

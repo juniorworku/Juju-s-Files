@@ -6,6 +6,7 @@ import Skills from './components/skills'
 import { ThemeProvider } from '@material-tailwind/react';
 import Projects from './components/projects';
 import ContactMeSection from './components/contactMe';
+import FooterSection from './components/footer';
 function App() {
 
   return (
@@ -15,7 +16,9 @@ function App() {
         <HeroSection />
         <Skills />
         <Projects />
-        <ContactMeSection />
+
+        <FooterSection />
+        
       </div>
     </ThemeProvider>
   )

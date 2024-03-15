@@ -21,6 +21,9 @@ export default function NavBar() {
   const navList = (
     <ul className="mt-4 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <Typography
+        to="about" 
+        smooth={true} 
+        duration={1500}
         as="li"
         variant="small"
         color="blue-gray"
@@ -31,6 +34,9 @@ export default function NavBar() {
         </a>
       </Typography>
       <Typography
+        to="skills" 
+        smooth={true} 
+        duration={1500}
         as="li"
         variant="small"
         color="blue-gray"
@@ -41,6 +47,9 @@ export default function NavBar() {
         </a>
       </Typography>
       <Typography
+        to="projects" 
+        smooth={true} 
+        duration={1500}
         as="li"
         variant="small"
         color="blue-gray"
@@ -51,6 +60,9 @@ export default function NavBar() {
         </a>
       </Typography>
       <Typography
+        to="contact" 
+        smooth={true} 
+        duration={1500}
         as="li"
         variant="small"
         color="blue-gray"

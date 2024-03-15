@@ -11,46 +11,49 @@ import { skills } from "../data/fixedData";
   export default function Skills() {
     return (
       <>
-      <div className=" bg-light-green-200 flex flex-col text-white font-montserrat p-0 md:p-4 mb-8">
-        <div className="flex flex-col flex-wrap items-center justify-center text-center gap-4">
-            <Typography variant="h3" mb={4} className="text-center">
+      <div id="skills">
+            <Typography variant="h3" className="m-0 relative text-4xl font-bold md:text-5xl text-center">
             Skills
             </Typography>
-            <Typography variant="h6" mb={4} className="text-center">
+            <Typography className="text-center font-medium m-0 font-montserrat items-stretch py-3" variant="h6">
             Check out some of the skills i've been working on:
             </Typography>
-            <div className=" bg-light-green-200 flex flex-wrap items-center justify-center gap-12 md:w-full">
-            {skills.map((skillCategory) => (
-                <Card
-                key={skillCategory.title}
-                className=" bg-light-green-200 w-full flex flex-col gap-8 border-2 border-teal-500 rounded-md min-h-18em p-4 shadow-md transition-transform duration-1000 ease-in-out hover:transform hover:scale-103 hover:shadow-lg"
-                >
-                <CardHeader className=" bg-light-green-200relative m-0 text-4xl font-bold md:text-5xl">
-                    <Typography variant="h4" className="text-center">
-                    {skillCategory.title}
-                    </Typography>
-                </CardHeader>
-                <CardBody className="flex flex-wrap items-center justify-center gap-5 self-center mb-4">
-                    {skillCategory.skills.map((skill) => (
-                    <Button
-                        key={skill.name}
-                        className="bg-light-green-300 flex flex-wrap items-center justify-center gap-2 p-2 border border-teal-500 rounded-full text-lg cursor-pointer hover:transform hover:scale-103 hover:shadow-md transition-transform hover:-translate-y-2 ease-in-out"
-                    >
-                        <img
-                        className="w-5 h-5"
-                        src={skill.image}
-                        alt={skill.name}
-                        />
-                        {skill.name}
-                    </Button>
-                    ))}
-                </CardBody>
-                </Card>
-            ))}
+            <div className="flex items-center justify-center">
+              <div className="grid grid-cols-1 gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+              {skills.map((skillCategory) => (
+                  <Card
+                  key={skillCategory.title}
+                  color="light-green"
+                  className="bg-light-green-300  relative py-1 px-2 rounded-3xl w-97 my-4 shadow-xl min-h-18em p-4 transition-transform duration-1000 ease-in-out hover:transform hover:scale-103 hover:shadow-lg"
+                  >
+                  <CardHeader className=" bg-light-green relative m-0 text-4xl font-bold md:text-5xl">
+                      <Typography variant="h4" className="text-center text-black">
+                      {skillCategory.title}
+                      </Typography>
+                  </CardHeader>
+                  <CardBody className="flex flex-wrap items-center justify-center gap-5 self-center mb-4">
+                      {skillCategory.skills.map((skill) => (
+                      <Button
+                          key={skill.name}
+                          className="bg-light-green-400 flex flex-wrap items-center justify-center gap-2 p-2 border border-teal-500 rounded-full text-lg cursor-pointer hover:transform hover:scale-103 hover:shadow-md transition-transform hover:-translate-y-2 ease-in-out"
+                      >
+                          <img
+                          className="w-5 h-5"
+                          src={skill.image}
+                          alt={skill.name}
+                          />
+                          {skill.name}
+                      </Button>
+                      ))}
+                  </CardBody>
+                  </Card>
+              ))}
+              </div>
+
             </div>
+            
 
         </div>
-      </div>
       </>
     );
   }
