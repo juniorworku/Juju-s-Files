@@ -1,4 +1,4 @@
-import React from "react";
+import {useState} from "react";
 import {
   Navbar,
   MobileNav,
@@ -9,7 +9,11 @@ import {
 import heroImage from "../images/heroImage.jpg"
  
 export default function NavBar() {
-  const [openNav, setOpenNav] = React.useState(false);
+  const [openNav, setOpenNav] = useState(false);
+  const CloseMobileNav = () => {
+    setOpenNav(!openNav);
+
+  }
  
   React.useEffect(() => {
     window.addEventListener(
