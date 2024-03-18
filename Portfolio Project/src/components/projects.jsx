@@ -33,7 +33,7 @@ export default function Projects() {
                       </Typography>
                       <div className="flex flex-row flex-wrap gap-3">
                         {item.tags.map((tag) => (
-                          <Button variant="outlined-green" className="mb-2 bg-light-green-400 items-center justify-center gap-2 p-2 border border-teal-500 rounded-full text-md cursor-pointer hover:transform hover:scale-103 hover:shadow-md transition-transform hover:-translate-y-2 ease-in-out">{tag}</Button>
+                          <Button variant="filled" className="mb-2 bg-light-green-400 items-center justify-center gap-2 p-2 border border-teal-500 rounded-full text-md cursor-pointer hover:transform hover:scale-103 hover:shadow-md transition-transform hover:-translate-y-2 ease-in-out">{tag}</Button>
                         ))}
                       </div>
                       <Typography className="mb-8 font-normal">

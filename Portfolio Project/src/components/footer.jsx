@@ -16,7 +16,14 @@ const FooterNavLink = styled(ScrollLink)`
   cursor: pointer;
   transition: all 0.5s ease-in-out;
   position: relative;
-`;
+
+  &:hover{
+    background-image:linear-gradient(90deg, rgba(46,56,116,1) 0%, rgba(9,121,21,1) 100%, rgba(0,255,15,0) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  `;
 
 
 export default function FooterSection() {

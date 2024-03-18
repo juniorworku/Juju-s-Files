@@ -50,7 +50,7 @@ function ContactMeSection() {
   };
 
   return (
-    <div id="about" className="container mx-auto px-4 text-center">
+    <div id="contact" className="container mx-auto px-4 text-center">
       <Typography variant="h3" color="blue-gray" className="mb-4">
         Contact me
       </Typography>
@@ -142,7 +142,7 @@ function ContactMeSection() {
                 />
                 <ErrorMessage name="message" className="text-red-500 font-normal" />
               </div>
-                <Button type="submit" variant="outlined-green" color="green">
+                <Button type="submit" variant="gradient" color="green">
                   Send message
                 </Button>
             </form>

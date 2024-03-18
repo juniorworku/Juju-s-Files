@@ -1,4 +1,4 @@
-import {useState} from "react";
+import React, { useState, useEffect } from "react";
 import {
   Navbar,
   MobileNav,
@@ -7,75 +7,75 @@ import {
   Avatar,
 } from "@material-tailwind/react";
 import heroImage from "../images/heroImage.jpg"
+import { Link as ScrollLink } from "react-scroll";
+import { styled } from "styled-components";
  
 export default function NavBar() {
   const [openNav, setOpenNav] = useState(false);
-  const CloseMobileNav = () => {
-    setOpenNav(!openNav);
 
-  }
- 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener(
       "resize",
       () => window.innerWidth >= 960 && setOpenNav(false),
     );
   }, []);
+
+  const NavLink = styled(ScrollLink)`
+    text-decoration: none;
+    font-weight: 500;
+    color:#000;
+    font-family: "Montserrat", sans-serif;
+    cursor:pointer;
+    transition:all 0.5s ease-in-out;
+    position:relative;
+
+    &:hover{
+      background-image:linear-gradient(90deg, rgba(46,56,116,1) 0%, rgba(9,121,21,1) 100%, rgba(0,255,15,0) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    `;
+
  
   const navList = (
     <ul className="mt-4 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      <Typography
+      <NavLink
         to="about" 
         smooth={true} 
         duration={1500}
         as="li"
-        variant="small"
-        color="blue-gray"
         className="flex items-center gap-x-2 p-1 font-medium"
       >
-        <a href="#" className="flex items-center">
-          About Me
+        <a href="#about" smooth={true} duration={1500} className="flex items-center" >
+         About Me
         </a>
-      </Typography>
-      <Typography
-        to="skills" 
-        smooth={true} 
-        duration={1500}
+       
+      </NavLink>
+      <NavLink
         as="li"
-        variant="small"
-        color="blue-gray"
         className="flex items-center gap-x-2 p-1 font-medium"
       >
-        <a href="#" className="flex items-center">
+        <a href="#skills" smooth={true} duration={1500} className="flex items-center" >
           Skills
         </a>
-      </Typography>
-      <Typography
-        to="projects" 
-        smooth={true} 
-        duration={1500}
+      </NavLink>
+      <NavLink
         as="li"
-        variant="small"
-        color="blue-gray"
         className="flex items-center gap-x-2 p-1 font-medium"
       >
-        <a href="#" className="flex items-center">
-          Projects
+        <a href="#project" smooth={true} duration={1500} className="flex items-center" >
+        Projects
         </a>
-      </Typography>
-      <Typography
-        to="contact" 
-        smooth={true} 
-        duration={1500}
+      </NavLink>
+      <NavLink 
         as="li"
-        variant="small"
-        color="blue-gray"
         className="flex items-center gap-x-2 p-1 font-medium"
       >
-        <a href="#" className="flex items-center">
+        <a href="#contact" smooth={true} duration={1500} className="flex items-center" >
           Contact Me
         </a>
-      </Typography>
+      </NavLink>
     </ul>
   );
  
@@ -135,6 +135,7 @@ export default function NavBar() {
           {navList}
         </div>
       </MobileNav>
+      
     </Navbar>
   );
 }
