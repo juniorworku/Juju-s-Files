@@ -29,9 +29,9 @@ export const Bio = {
     "Programmer",
   ],
   description:
-    "a versatile creator passionate about crafting digital solutions that are as functional as they are visually engaging. I thrive on the journey of translating innovative ideas into seamless, user-centered experiences.",
+    "a passionate junior web developer with a keen eye for clean design and efficient functionality. With a strong foundation in Web development in creating seamless user experiences that not only meet but exceed expectations. Whether it's optimizing website performance, implementing intuitive UI/UX designs, or integrating cutting-edge technologies, I'm eager to bring creativity and innovation to every project I work on.",
   resume:
-    "https://drive.google.com/file/d/1fp_VDnXsfmdrWBn223QempNEUJHa_r83/view?usp=drive_link",
+    "https://drive.google.com/file/d/1TeTlhlc57Y6dJcLqIJc8pmG4UslwRENY/view?usp=drive_link",
   github: "https://github.com/juniorworku",
   profile:"https://drive.google.com/file/d/1VrhX0iXlSDF3I-p7VbLCGb1658YM8XEs/view?usp=drive_link"
 };
@@ -139,7 +139,7 @@ export const projects = [
       " Welcome to the GitHub repository for the my personal portfolio website project! Explore the source code. Built with HTML, CSS, and JavaScript.",
     tags: ["React", "BootStrap","RESTFul API"],
     link: "https://github.com",
-    repository: "https://github.com/juniorworku",
+    repository: "https://github.com/juniorworku/Inventory-Management-System",
   },
   {
     id: 2,
@@ -149,7 +149,7 @@ export const projects = [
       " Welcome to the GitHub repository for the my personal portfolio website project! Explore the source code. Built with HTML, CSS, and JavaScript.",
     tags: ["React + Vite", "BootStrap","RESTFul API"],
     link: "https://github.com",
-    repository: "https://github.com/juniorworku",
+    repository: "https://github.com/juniorworku/ReactJS-Projects/tree/main/A%20BUDGET%20APP/A%20Budget%20App",
   },
   {
     id: 3,
@@ -159,6 +159,6 @@ export const projects = [
       " Welcome to the GitHub repository for the my personal portfolio website project! Explore the source code. Built with HTML, CSS, and JavaScript.",
     tags: ["React + vite", "Material TailWind Css"],
     link: "https://github.com",
-    repository: "https://github.com/juniorworku",
+    repository: "https://github.com/juniorworku/ReactJS-Weather-App",
   },
 ]
