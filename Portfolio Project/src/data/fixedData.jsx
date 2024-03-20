@@ -156,7 +156,7 @@ export const projects = [
     image: weatherImage,
     title: "weather App",
     description:
-      " Welcome to the GitHub repository for the my personal portfolio website project! Explore the source code. Built with HTML, CSS, and JavaScript.",
+      " This is a simple weather displaying application built with React + vite, using the OpenWeather API to fetch real-time weather data. By entering the city name, and the Application will display the weather information of the city.",
     tags: ["React + vite", "Material TailWind Css"],
     link: "https://github.com",
     repository: "https://github.com/juniorworku/ReactJS-Weather-App",

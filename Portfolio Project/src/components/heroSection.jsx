@@ -12,18 +12,18 @@ export default function HeroSection() {
     <>
       <header id="about" className="p-4">
         <div className="mt-2 w-full">
-          <div className="container grid grid-cols-1 gap-12 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 mx-auto text-start">
-            <div>
+          <div className=" grid grid-cols-1 gap-5 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 text-center">
+            <div className="items-center justify-between">
               <img
                 className="m-auto h-80 w-80 rounded-full object-cover object-center shadow-xl shadow-blue-gray-900/50 border"
                 src={heroImage}
                 alt="profile image"
               />
             </div>
-            <div>
+            <div className="p-4">
               <Typography
                 variant="h1"
-                className="mx-auto my-2 w-full text-center"
+                className="mx-2 my-2 w-full text-center"
               >
                 Hi, I'm {Bio.name}<br />
               </Typography>
@@ -45,20 +45,20 @@ export default function HeroSection() {
               </Typography>
               <Typography
                 variant="lead"
-                className="mx-auto w-full lg:text-lg text-center"
+                className="px-2 w-full lg:text-lg text-center"
               >
                 {Bio.description}
               </Typography>
 
             </div>
           </div>
-          <div className="mt-8">
+          <div className="mt-12">
             <div className="justify-center items-center flex flex-row gap-12">
               <a href={Bio.resume} target="_blank" rel="noreferrer">
-                <Button className="bg-indigo-200 rounded-full px-4 md:w-[12rem]">View Resume</Button>
+                <Button className="bg-indigo-300 rounded-full px-4 md:w-[12rem]">View Resume</Button>
               </a>
               <a href={Bio.github} target="_blank" rel="noreferrer">
-                <Button className="bg-indigo-200 rounded-full px-4 md:w-[12rem]">Visit GitHub Account</Button>
+                <Button className="bg-indigo-300 rounded-full px-4 md:w-[12rem]">Visit GitHub Account</Button>
               </a>
             </div>
           </div>

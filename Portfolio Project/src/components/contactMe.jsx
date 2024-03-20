@@ -86,7 +86,7 @@ function ContactMeSection() {
                     name="firstName"
                     placeholder="First Name"
                     as={Input}
-                    className="focus:border-t-blue-900"
+                    className="focus:border-blacked"
                   />
                   <ErrorMessage name="firstName" className="text-red-500 font-normal" />
                 </div>
@@ -103,7 +103,7 @@ function ContactMeSection() {
                     name="lastName"
                     placeholder="Last Name"
                     as={Input}
-                    className="focus:border-t-blue-900"
+                    className="focus:border-blacked"
                   />
                   <ErrorMessage name="lastName" className="text-red-500 font-normal" />
                 </div>
@@ -121,7 +121,7 @@ function ContactMeSection() {
                   name="email"
                   placeholder="name@example.com"
                   as={Input}
-                  className="focus:border-t-blue-900"
+                  className="focus:border-blacked"
                 />
                 <ErrorMessage name="email" className="text-red-500 font-normal" />
               </div>
@@ -142,7 +142,7 @@ function ContactMeSection() {
                 />
                 <ErrorMessage name="message" className="text-red-500 font-normal" />
               </div>
-                <Button type="submit" variant="gradient" color="green">
+                <Button className="bg-indigo-300 rounded-full px-4 md:w-[12rem]" type="submit">
                   Send message
                 </Button>
             </form>

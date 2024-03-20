@@ -30,7 +30,7 @@ export default function FooterSection() {
   return (
     <div>
         <footer className="w-full flex flex-col items-center justify-center gap-2 lg:gap-3 py-2 lg:py-4">
-            <Typography varaint="h3" className="font-montserrat text-1.25xl font-semibold tracking-wide">Junior Worku</Typography>
+            <Typography varaint="h1" className="font-montserrat font-bold">Junior Worku</Typography>
             <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 text-center md:justify-between">
                 <ul className="flex justify-center gap-y-2 gap-x-12 text-center">
                     <li>
@@ -76,18 +76,18 @@ export default function FooterSection() {
                 </ul>
             </div>
             <div className="flex gap-2">
-                <Typography as="a" href={socialLinks.github} target="_blank" className="transition-all duration-500 ease-in-out text-#7e908e hover:transform hover:scale-120">
+                <Typography as="a" href={socialLinks.github} target="_blank" className="transition-all duration-500 ease-in-out hover:transform hover:scale-180">
                     <FaGithub size={35} />
                 </Typography >
-                <Typography as="a" href={socialLinks.linkedin} target="_blank" className="transition-all duration-500 ease-in-out text-#7e908e hover:transform hover:scale-120">
+                <Typography as="a" href={socialLinks.linkedin} target="_blank" className="transition-all duration-500 ease-in-out hover:transform hover:scale-180">
                     <FaLinkedin size={35} />                    
                 </Typography>
-                <Typography as="a" href={socialLinks.telegram} target="_blank" className="transition-all duration-500 ease-in-out text-#7e908e hover:transform hover:scale-120">
-                    <FaTelegramPlane size={35} />                    
+                <Typography as="a" href={socialLinks.telegram} target="_blank" className="transition-all duration-500 ease-in-out hover:transform hover:scale-180">
+                    <FaTelegramPlane size={35}  />                    
                 </Typography>
             </div>
             <hr className="my-1 border-blue-gray-50" />
-            <Typography color="blue-gray" className="text-center font-normal">
+            <Typography className="text-center font-normal">
                 &copy; 2024 Junior Worku
             </Typography>
         </footer>
